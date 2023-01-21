@@ -1,3 +1,5 @@
+import { Gender } from './enums';
+
 export interface IFilter {
   page: number;
 }
@@ -7,7 +9,7 @@ export interface ICharacter {
   name: string;
   created: string;
   episode: string[];
-  gender: string;
+  gender: Gender;
   image: string;
   location: ILocation;
   origin: ILocation;
@@ -23,7 +25,7 @@ export interface ILocation {
 }
 
 export interface ICharacterArray {
-  info: any;
+  info: IInfo;
   results: ICharacter[];
 }
 
