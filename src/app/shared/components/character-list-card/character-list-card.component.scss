@@ -1,0 +1,34 @@
+.character {
+  padding: 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 5px 1px -1px rgba(218, 206, 206, 0.726),
+    0px 1px 1px 0px rgba(255, 255, 255, 0.74),
+    0px 1px 3px 0px rgba(143, 58, 58, 0.12);
+  .avatar {
+    margin: 10px 10px 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+  }
+  mat-card-title {
+    text-align: center;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .gender {
+    position: absolute;
+    top: -28px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    z-index: -1;
+  }
+  img {
+    object-fit: cover;
+    overflow: hidden;
+  }
+}

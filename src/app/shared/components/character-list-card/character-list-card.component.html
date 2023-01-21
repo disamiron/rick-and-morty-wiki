@@ -1,0 +1,10 @@
+<mat-card *ngIf="character" class="character">
+  <img
+    class="avatar"
+    mat-card-image
+    [src]="character.image"
+    [alt]="character.name"
+  />
+  <mat-card-title [title]="character.name">{{ character.name }}</mat-card-title>
+  <img class="gender" [src]="character.gender | genderLogo" />
+</mat-card>
