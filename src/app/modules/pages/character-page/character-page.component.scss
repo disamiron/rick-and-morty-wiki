@@ -7,8 +7,17 @@
 }
 .back {
   width: 100%;
+  min-width: 570px;
   opacity: 0.5;
+  font-size: 16px;
 }
+
 app-character-card {
   width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .back {
+    min-width: 350px;
+  }
 }
