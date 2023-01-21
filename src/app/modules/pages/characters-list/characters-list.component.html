@@ -1,0 +1,17 @@
+<div
+  class="list"
+  *ngIf="characters.length"
+  infiniteScroll
+  (scrolled)="onScroll()"
+  [infiniteScrollDistance]="0"
+>
+  <a
+    *ngFor="let character of characters"
+    [routerLink]="character.id.toString()"
+  >
+    <app-character-list-card [character]="character"></app-character-list-card
+  ></a>
+</div>
+<div class="spinner">
+  <mat-spinner color="accent" diameter="40" *ngIf="isLoading"></mat-spinner>
+</div>

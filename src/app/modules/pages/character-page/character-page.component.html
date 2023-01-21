@@ -1,0 +1,16 @@
+<div class="back">
+  <a [routerLink]="'../'">
+    <button color="primary" mat-mini-fab>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </a>
+</div>
+
+<app-character-card
+  *ngIf="character"
+  [character]="character"
+></app-character-card>
+
+<div class="spinner">
+  <mat-spinner color="accent" diameter="40" *ngIf="isLoading"></mat-spinner>
+</div>
