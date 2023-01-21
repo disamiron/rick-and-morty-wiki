@@ -3,3 +3,7 @@ export const SvgGenderIcons = {
   male: 'assets/icons-svg/male.svg',
   unknow: 'assets/icons-svg/unknow.svg',
 };
+
+export const routeUrls = {
+  characters: 'characters',
+};
