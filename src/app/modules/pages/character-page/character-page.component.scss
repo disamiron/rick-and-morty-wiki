@@ -5,11 +5,20 @@
   align-items: center;
   min-width: 300px;
 }
-.back {
+
+.card {
   width: 100%;
   min-width: 570px;
-  opacity: 0.5;
-  font-size: 16px;
+  mat-card-header {
+    margin: 0 0 20px;
+    font-weight: 600;
+    ::ng-deep .mat-card-header-text {
+      margin: 0;
+    }
+    button {
+      font-weight: 600;
+    }
+  }
 }
 
 app-character-card {
@@ -17,7 +26,8 @@ app-character-card {
 }
 
 @media screen and (max-width: 700px) {
-  .back {
-    min-width: 350px;
+  .card {
+    max-width: 350px;
+    min-width: 200px;
   }
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { noAvatarCharacterSrc } from '../../constants';
 import { ICharacter } from '../../interfaces';
 
 @Component({
@@ -8,4 +9,6 @@ import { ICharacter } from '../../interfaces';
 })
 export class CharacterCardComponent {
   @Input() character: ICharacter | undefined;
+
+  readonly noAvatarCharacterSrc = noAvatarCharacterSrc;
 }

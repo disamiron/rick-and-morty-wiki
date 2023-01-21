@@ -7,3 +7,6 @@ export const SvgGenderIcons = {
 export const routeUrls = {
   characters: 'characters',
 };
+
+export const noAvatarCharacterSrc =
+  'https://rickandmortyapi.com/api/character/avatar/19.jpeg';

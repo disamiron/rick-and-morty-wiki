@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ICharacter } from 'src/app/shared/interfaces';
 import { RickAndMortyService } from 'src/app/shared/services/rick-and-morty/rick-and-morty.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { MatTableDataSource } from '@angular/material/table';
 
 @UntilDestroy()
 @Component({
@@ -10,13 +11,15 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
   styleUrls: ['./characters-list.component.scss'],
 })
 export class CharactersListComponent implements OnInit {
-  public characters: ICharacter[] = [];
+  public dataSource: MatTableDataSource<ICharacter> = new MatTableDataSource();
 
   private _page: number = 1;
 
   public isLoading: boolean = false;
 
   private _allCharactersIsFetched: boolean = false;
+
+  public columnsToDisplay = ['avatar', 'name', 'gender'];
 
   constructor(private _rickandmortyService: RickAndMortyService) {}
 
@@ -31,8 +34,7 @@ export class CharactersListComponent implements OnInit {
       .pipe(untilDestroyed(this))
       .subscribe((v) => {
         this._allCharactersIsFetched = !v.info.next;
-        this.characters = [...this.characters, ...v.results];
-
+        this.dataSource.data = [...this.dataSource.data, ...v.results];
         this.isLoading = false;
       });
   }

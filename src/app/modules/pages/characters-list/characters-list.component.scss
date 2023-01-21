@@ -5,3 +5,50 @@
   justify-content: center;
   gap: 60px;
 }
+
+table {
+  width: 100%;
+
+  td:first-child {
+    margin-bottom: 5px;
+  }
+
+  td {
+    cursor: pointer;
+    padding-right: 20px;
+  }
+
+  th {
+    border-bottom: none;
+    font-size: 18px;
+  }
+
+  .table-row {
+    height: 80px;
+
+    &:hover {
+      background: rgb(235, 235, 235);
+      border-radius: 10px;
+    }
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .gender {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+  }
+}
+
+.name {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}

@@ -1,16 +1,37 @@
 <div
   class="list"
-  *ngIf="characters.length"
+  *ngIf="dataSource.data.length"
   infiniteScroll
   (scrolled)="onScroll()"
   [infiniteScrollDistance]="0"
 >
-  <a
-    *ngFor="let character of characters"
-    [routerLink]="character.id.toString()"
-  >
-    <app-character-list-card [character]="character"></app-character-list-card
-  ></a>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef>Avatar</th>
+      <td mat-cell *matCellDef="let element">
+        <img class="avatar" [src]="element.image" [alt]="element.name" />
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">
+        <p class="name" [title]="element.name">{{ element.name }}</p>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef>Gender</th>
+      <td mat-cell *matCellDef="let element">
+        <img class="gender" [src]="element.gender | genderLogo" />
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr
+      [routerLink]="[myRowData.id]"
+      class="table-row"
+      mat-row
+      *matRowDef="let myRowData; columns: columnsToDisplay"
+    ></tr>
+  </table>
 </div>
 <div class="spinner">
   <mat-spinner color="accent" diameter="40" *ngIf="isLoading"></mat-spinner>
