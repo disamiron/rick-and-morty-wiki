@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url("assets/background/space.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(3px);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+h1 {
+  font-family: "Roboto", monospace;
+}
+a {
+  text-decoration: none;
+}
+.spinner {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+app-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
